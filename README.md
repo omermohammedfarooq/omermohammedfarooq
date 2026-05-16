@@ -34,6 +34,5 @@ Full-stack RAG-powered academic platform for JNTU students — AI assistant (mul
 
 ## Contact
 
-📧 mohdomerfarooq17@gmail.com  
-🔗 [LinkedIn](https://linkedin.com/in/mohammed-omer-farooq)  
-📍 Hyderabad, India
+📧 omermohammedfarooq@gmail.com  
+🔗 [LinkedIn](https://linkedin.com/in/omermohammedfarooq)  
