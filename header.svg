@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="480" viewBox="0 0 860 480">
+  <foreignObject width="860" height="480">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .wrapper {
+          width: 860px;
+          background: #0d1117;
+          padding: 24px 24px 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          font-family: 'Courier New', Consolas, monospace;
+          overflow: hidden;
+        }
+
+        .banner {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          border: 1px solid #21262d;
+          border-radius: 10px;
+          overflow: hidden;
+          background: #010409;
+        }
+
+        .ascii-panel {
+          background: #010409;
+          padding: 16px 10px;
+          border-right: 1px solid #21262d;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .ascii-art {
+          color: #00d4aa;
+          font-size: 8px;
+          line-height: 1.12;
+          letter-spacing: 0.1px;
+          white-space: pre;
+          font-family: 'Courier New', Consolas, monospace;
+          animation: flicker 5s ease-in-out infinite;
+        }
+
+        @keyframes flicker {
+          0%,94%,100% { opacity:1; text-shadow: 0 0 6px rgba(0,212,170,0.3); }
+          95%          { opacity:.8; text-shadow: 0 0 18px rgba(0,212,170,0.6); }
+          96%          { opacity:1; }
+          98%          { opacity:.88; }
+        }
+
+        .info-panel {
+          background: #010409;
+          padding: 14px 18px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 2px;
+        }
+
+        .info-header { font-size: 14px; margin-bottom: 4px; color: #e6edf3; }
+        .info-header .user  { color: #00d4aa; font-weight: bold; }
+        .info-header .at    { color: #8b949e; }
+        .info-header .host  { color: #79c0ff; font-weight: bold; }
+
+        .divider { color: rgba(0,212,170,0.33); font-size: 10px; margin-bottom: 2px; letter-spacing: 2px; }
+
+        .info-row {
+          display: flex;
+          font-size: 11px;
+          line-height: 1.6;
+          opacity: 0;
+          animation: fadeRow 0.35s ease forwards;
+        }
+        .info-label { color: #00d4aa; font-weight: bold; min-width: 68px; }
+        .info-sep   { color: #444d56; margin: 0 4px; }
+        .info-val   { color: #c9d1d9; }
+        .blue   { color: #79c0ff; }
+        .purple { color: #d2a8ff; }
+        .yellow { color: #e3b341; }
+        .green  { color: #56d364; }
+        .coral  { color: #ffa28b; }
+
+        .info-row:nth-child(3)  { animation-delay:.05s; }
+        .info-row:nth-child(4)  { animation-delay:.15s; }
+        .info-row:nth-child(5)  { animation-delay:.28s; }
+        .info-row:nth-child(6)  { animation-delay:.42s; }
+        .info-row:nth-child(7)  { animation-delay:.56s; }
+        .info-row:nth-child(8)  { animation-delay:.70s; }
+        .info-row:nth-child(9)  { animation-delay:.84s; }
+        .info-row:nth-child(10) { animation-delay:.98s; }
+        .info-row:nth-child(11) { animation-delay:1.12s; }
+
+        @keyframes fadeRow {
+          from { opacity:0; transform: translateX(-8px); }
+          to   { opacity:1; transform: translateX(0); }
+        }
+
+        .palette { display:flex; gap:3px; margin-top:6px; }
+        .swatch  { width:14px; height:14px; border-radius:2px; opacity:0; animation: swatchPop .25s ease forwards; }
+        .swatch:nth-child(1){ background:#010409; border:1px solid #30363d; animation-delay:1.25s; }
+        .swatch:nth-child(2){ background:#21262d; animation-delay:1.32s; }
+        .swatch:nth-child(3){ background:#444d56; animation-delay:1.39s; }
+        .swatch:nth-child(4){ background:#8b949e; animation-delay:1.46s; }
+        .swatch:nth-child(5){ background:#00d4aa; animation-delay:1.53s; }
+        .swatch:nth-child(6){ background:#79c0ff; animation-delay:1.60s; }
+        .swatch:nth-child(7){ background:#d2a8ff; animation-delay:1.67s; }
+        .swatch:nth-child(8){ background:#e3b341; animation-delay:1.74s; }
+
+        @keyframes swatchPop {
+          from { opacity:0; transform:scale(0); }
+          to   { opacity:1; transform:scale(1); }
+        }
+
+        /* Typing Bar */
+        .typing-bar {
+          background: #010409;
+          border: 1px solid #21262d;
+          border-radius: 8px;
+          padding: 11px 18px;
+          font-size: 13px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-shrink: 0;
+        }
+        .prompt { color: #00d4aa; font-weight: bold; white-space: nowrap; }
+
+        .typed-container {
+          position: relative;
+          height: 18px;
+          flex: 1;
+        }
+
+        .typed-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 0;
+          height: 18px;
+          line-height: 18px;
+          color: #e6edf3;
+          font-size: 13px;
+          font-family: 'Courier New', Consolas, monospace;
+          border-right: 8px solid #00d4aa;
+          padding-right: 2px;
+          animation-timing-function: linear, step-end;
+          animation-iteration-count: infinite;
+        }
+
+        .line-1 { animation-name: revL1, curBlink; animation-duration: 24s, 1s; }
+        .line-2 { animation-name: revL2, curBlink; animation-duration: 24s, 1s; }
+        .line-3 { animation-name: revL3, curBlink; animation-duration: 24s, 1s; }
+        .line-4 { animation-name: revL4, curBlink; animation-duration: 24s, 1s; }
+
+        @keyframes curBlink { 50% { border-right-color: transparent; } }
+
+        /* 24s total, 6s per line. Type 2.5s, hold 2s, delete 1s, gap 0.5s */
+        @keyframes revL1 {
+          0%     { max-width: 0;     opacity: 1; }
+          10.4%  { max-width: 500px; opacity: 1; }
+          18.75% { max-width: 500px; opacity: 1; }
+          22.9%  { max-width: 0;     opacity: 1; }
+          23.5%  { max-width: 0;     opacity: 0; }
+          100%   { max-width: 0;     opacity: 0; }
+        }
+        @keyframes revL2 {
+          0%     { max-width: 0; opacity: 0; }
+          24%    { max-width: 0; opacity: 0; }
+          25%    { max-width: 0; opacity: 1; }
+          35.4%  { max-width: 500px; opacity: 1; }
+          43.75% { max-width: 500px; opacity: 1; }
+          47.9%  { max-width: 0;     opacity: 1; }
+          48.5%  { max-width: 0;     opacity: 0; }
+          100%   { max-width: 0;     opacity: 0; }
+        }
+        @keyframes revL3 {
+          0%     { max-width: 0; opacity: 0; }
+          49%    { max-width: 0; opacity: 0; }
+          50%    { max-width: 0; opacity: 1; }
+          60.4%  { max-width: 500px; opacity: 1; }
+          68.75% { max-width: 500px; opacity: 1; }
+          72.9%  { max-width: 0;     opacity: 1; }
+          73.5%  { max-width: 0;     opacity: 0; }
+          100%   { max-width: 0;     opacity: 0; }
+        }
+        @keyframes revL4 {
+          0%     { max-width: 0; opacity: 0; }
+          74%    { max-width: 0; opacity: 0; }
+          75%    { max-width: 0; opacity: 1; }
+          85.4%  { max-width: 500px; opacity: 1; }
+          93.75% { max-width: 500px; opacity: 1; }
+          97.9%  { max-width: 0;     opacity: 1; }
+          98.5%  { max-width: 0;     opacity: 0; }
+          100%   { max-width: 0;     opacity: 0; }
+        }
+
+        /* Stats Bar */
+        .stats-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; flex-shrink: 0; }
+        .stat-card {
+          background:#010409; border:1px solid #21262d; border-radius:8px;
+          padding:14px 10px; text-align:center;
+          opacity:0; animation: fadeUp .35s ease forwards;
+        }
+        .stat-card:nth-child(1){ animation-delay:1.4s; }
+        .stat-card:nth-child(2){ animation-delay:1.55s; }
+        .stat-card:nth-child(3){ animation-delay:1.70s; }
+        .stat-card:nth-child(4){ animation-delay:1.85s; }
+
+        @keyframes fadeUp {
+          from{opacity:0;transform:translateY(8px);}
+          to{opacity:1;transform:translateY(0);}
+        }
+        .stat-val   { font-size:20px; font-weight:bold; color:#00d4aa; display:block; }
+        .stat-label { font-size:10px; color:#8b949e; font-family: Arial, Helvetica, sans-serif; margin-top:3px; text-transform:uppercase; letter-spacing:.05em; }
+      </style>
+
+      <div class="wrapper">
+        <div class="banner">
+          <div class="ascii-panel">
+            <pre class="ascii-art">
+ ██████╗ ███╗   ███╗███████╗██████╗
+██╔═══██╗████╗ ████║██╔════╝██╔══██╗
+██║   ██║██╔████╔██║█████╗  ██████╔╝
+██║   ██║██║╚██╔╝██║██╔══╝  ██╔══██╗
+╚██████╔╝██║ ╚═╝ ██║███████╗██║  ██║
+ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
+
+███████╗ █████╗ ██████╗  ██████╗  ██████╗  ██████╗
+██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗██╔═══██╗
+█████╗  ███████║██████╔╝██║   ██║██║   ██║██║   ██║
+██╔══╝  ██╔══██║██╔══██╗██║   ██║██║   ██║██║▄▄ ██║
+██║     ██║  ██║██║  ██║╚██████╔╝╚██████╔╝╚██████╔╝
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝  ╚══▀▀═╝</pre>
+          </div>
+
+          <div class="info-panel">
+            <div class="info-header">
+              <span class="user">omer</span><span class="at">@</span><span class="host">github</span>
+            </div>
+            <div class="divider">────────────────────────</div>
+            <div class="info-row"><span class="info-label">OS</span><span class="info-sep">:</span><span class="info-val blue">Student OS · 2024–2028</span></div>
+            <div class="info-row"><span class="info-label">Host</span><span class="info-sep">:</span><span class="info-val">Avanthi Institute, Hyderabad</span></div>
+            <div class="info-row"><span class="info-label">Degree</span><span class="info-sep">:</span><span class="info-val purple">B.Tech CSE (AI &amp; ML)</span></div>
+            <div class="info-row"><span class="info-label">Focus</span><span class="info-sep">:</span><span class="info-val green">LLMs · RAG · Computer Vision</span></div>
+            <div class="info-row"><span class="info-label">Languages</span><span class="info-sep">:</span><span class="info-val yellow">Python · Java · C</span></div>
+            <div class="info-row"><span class="info-label">Stack</span><span class="info-sep">:</span><span class="info-val coral">TensorFlow · Flask · ChromaDB</span></div>
+            <div class="info-row"><span class="info-label"> </span><span class="info-sep"> </span><span class="info-val coral">OpenRouter · Groq · AWS</span></div>
+            <div class="info-row"><span class="info-label">Building</span><span class="info-sep">:</span><span class="info-val">AI that solves real problems</span></div>
+            <div class="info-row"><span class="info-label">Contact</span><span class="info-sep">:</span><span class="info-val purple">omermohammedfarooq@gmail.com</span></div>
+            <div class="palette">
+              <div class="swatch"></div><div class="swatch"></div>
+              <div class="swatch"></div><div class="swatch"></div>
+              <div class="swatch"></div><div class="swatch"></div>
+              <div class="swatch"></div><div class="swatch"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="typing-bar">
+          <span class="prompt">~/github $</span>
+          <div class="typed-container">
+            <span class="typed-line line-1">building AI systems that actually work...</span>
+            <span class="typed-line line-2">OCR + LLM pipelines // handwriting → feedback</span>
+            <span class="typed-line line-3">RAG · vector search · multimodal models</span>
+            <span class="typed-line line-4">second year. way too many side projects.</span>
+          </div>
+        </div>
+
+        <div class="stats-bar">
+          <div class="stat-card">
+            <span class="stat-val">3+</span>
+            <div class="stat-label">AI Projects</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">90%</span>
+            <div class="stat-label">CNN Accuracy</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">RAG</span>
+            <div class="stat-label">Primary Stack</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">∞</span>
+            <div class="stat-label">Things to Build</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
