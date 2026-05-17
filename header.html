@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; font-family: 'Courier New', monospace; }
+
+  .wrapper {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #010409;
+  }
+
+  .ascii-panel {
+    background: #010409;
+    padding: 24px 16px;
+    border-right: 1px solid #21262d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 240px;
+  }
+
+  .ascii-art {
+    color: #00d4aa;
+    font-size: 9.2px;
+    line-height: 1.15;
+    letter-spacing: 0.3px;
+    white-space: pre;
+    animation: flicker 5s ease-in-out infinite;
+  }
+
+  @keyframes flicker {
+    0%,94%,100% { opacity:1; filter: drop-shadow(0 0 6px #00d4aa55); }
+    95%          { opacity:.8; filter: drop-shadow(0 0 18px #00d4aaaa); }
+    96%          { opacity:1; }
+    98%          { opacity:.88; }
+  }
+
+  .info-panel {
+    background: #010409;
+    padding: 22px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .info-header {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #e6edf3;
+  }
+  .info-header .user  { color: #00d4aa; font-weight: bold; }
+  .info-header .at    { color: #8b949e; }
+  .info-header .host  { color: #79c0ff; font-weight: bold; }
+
+  .divider { color: #00d4aa55; font-size: 11px; margin-bottom: 4px; letter-spacing: 2px; }
+
+  .info-row {
+    display: flex;
+    font-size: 12px;
+    line-height: 1.65;
+    opacity: 0;
+    animation: fadeRow 0.35s ease forwards;
+  }
+  .info-label { color: #00d4aa; font-weight: bold; min-width: 76px; }
+  .info-sep   { color: #444d56; margin: 0 5px; }
+  .info-val   { color: #c9d1d9; }
+  .blue   { color: #79c0ff; }
+  .purple { color: #d2a8ff; }
+  .yellow { color: #e3b341; }
+  .green  { color: #56d364; }
+  .coral  { color: #ffa28b; }
+
+  .info-row:nth-child(1)  { animation-delay:.05s; }
+  .info-row:nth-child(2)  { animation-delay:.15s; }
+  .info-row:nth-child(3)  { animation-delay:.28s; }
+  .info-row:nth-child(4)  { animation-delay:.42s; }
+  .info-row:nth-child(5)  { animation-delay:.56s; }
+  .info-row:nth-child(6)  { animation-delay:.70s; }
+  .info-row:nth-child(7)  { animation-delay:.84s; }
+  .info-row:nth-child(8)  { animation-delay:.98s; }
+  .info-row:nth-child(9)  { animation-delay:1.12s; }
+
+  @keyframes fadeRow {
+    from { opacity:0; transform: translateX(-8px); }
+    to   { opacity:1; transform: translateX(0); }
+  }
+
+  .palette { display:flex; gap:3px; margin-top:10px; }
+  .swatch  { width:16px; height:16px; border-radius:2px; opacity:0; animation: swatchPop .25s ease forwards; }
+  .swatch:nth-child(1){ background:#010409; border:1px solid #30363d; animation-delay:1.25s; }
+  .swatch:nth-child(2){ background:#21262d; animation-delay:1.32s; }
+  .swatch:nth-child(3){ background:#444d56; animation-delay:1.39s; }
+  .swatch:nth-child(4){ background:#8b949e; animation-delay:1.46s; }
+  .swatch:nth-child(5){ background:#00d4aa; animation-delay:1.53s; }
+  .swatch:nth-child(6){ background:#79c0ff; animation-delay:1.60s; }
+  .swatch:nth-child(7){ background:#d2a8ff; animation-delay:1.67s; }
+  .swatch:nth-child(8){ background:#e3b341; animation-delay:1.74s; }
+
+  @keyframes swatchPop {
+    from { opacity:0; transform:scale(0); }
+    to   { opacity:1; transform:scale(1); }
+  }
+
+  .typing-bar {
+    background:#010409;
+    border:1px solid #21262d;
+    border-radius:8px;
+    padding:13px 20px;
+    font-size:13px;
+    color:#8b949e;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .prompt { color:#00d4aa; }
+  .typed-text { color:#e6edf3; min-width:300px; }
+  .cursor {
+    display:inline-block; width:9px; height:14px;
+    background:#00d4aa;
+    animation: blink 1s step-end infinite;
+    vertical-align:middle; margin-left:2px;
+  }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+  .stats-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .stat-card {
+    background:#010409; border:1px solid #21262d; border-radius:8px;
+    padding:14px 16px; text-align:center;
+    opacity:0; animation: fadeUp .35s ease forwards;
+  }
+  .stat-card:nth-child(1){ animation-delay:1.4s; }
+  .stat-card:nth-child(2){ animation-delay:1.55s; }
+  .stat-card:nth-child(3){ animation-delay:1.70s; }
+  .stat-card:nth-child(4){ animation-delay:1.85s; }
+
+  @keyframes fadeUp {
+    from{opacity:0;transform:translateY(8px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .stat-val   { font-size:20px; font-weight:bold; color:#00d4aa; display:block; }
+  .stat-label { font-size:11px; color:#8b949e; margin-top:3px; font-family:sans-serif; text-transform:uppercase; letter-spacing:.05em; }
+
+  .note { text-align:center; font-size:11px; color:#444d56; font-family:sans-serif; margin-top:2px; }
+  .note span { color:#00d4aa; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="banner">
+    <div class="ascii-panel">
+      <pre class="ascii-art">
+ ██████╗ ███╗   ███╗███████╗██████╗
+██╔═══██╗████╗ ████║██╔════╝██╔══██╗
+██║   ██║██╔████╔██║█████╗  ██████╔╝
+██║   ██║██║╚██╔╝██║██╔══╝  ██╔══██╗
+╚██████╔╝██║ ╚═╝ ██║███████╗██║  ██║
+ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
+
+███████╗ █████╗ ██████╗  ██████╗  ██████╗  ██████╗
+██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗██╔═══██╗
+█████╗  ███████║██████╔╝██║   ██║██║   ██║██║   ██║
+██╔══╝  ██╔══██║██╔══██╗██║   ██║██║   ██║██║▄▄ ██║
+██║     ██║  ██║██║  ██║╚██████╔╝╚██████╔╝╚██████╔╝
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝  ╚══▀▀═╝</pre>
+    </div>
+
+    <div class="info-panel">
+      <div class="info-header">
+        <span class="user">omer</span><span class="at">@</span><span class="host">github</span>
+      </div>
+      <div class="divider">────────────────────────</div>
+
+      <div class="info-row"><span class="info-label">OS</span><span class="info-sep">:</span><span class="info-val blue">Student OS · 2024–2028</span></div>
+      <div class="info-row"><span class="info-label">Host</span><span class="info-sep">:</span><span class="info-val">Avanthi Institute, Hyderabad</span></div>
+      <div class="info-row"><span class="info-label">Degree</span><span class="info-sep">:</span><span class="info-val purple">B.Tech CSE (AI &amp; ML)</span></div>
+      <div class="info-row"><span class="info-label">Focus</span><span class="info-sep">:</span><span class="info-val green">LLMs · RAG · Computer Vision</span></div>
+      <div class="info-row"><span class="info-label">Languages</span><span class="info-sep">:</span><span class="info-val yellow">Python · Java · C</span></div>
+      <div class="info-row"><span class="info-label">Stack</span><span class="info-sep">:</span><span class="info-val coral">TensorFlow · Flask · ChromaDB</span></div>
+      <div class="info-row"><span class="info-label"></span><span class="info-sep"> </span><span class="info-val coral">OpenRouter · Groq · AWS</span></div>
+      <div class="info-row"><span class="info-label">Building</span><span class="info-sep">:</span><span class="info-val">AI that solves real problems</span></div>
+      <div class="info-row"><span class="info-label">Contact</span><span class="info-sep">:</span><span class="info-val purple">omermohammedfarooq@gmail.com</span></div>
+
+      <div class="palette">
+        <div class="swatch"></div><div class="swatch"></div>
+        <div class="swatch"></div><div class="swatch"></div>
+        <div class="swatch"></div><div class="swatch"></div>
+        <div class="swatch"></div><div class="swatch"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="typing-bar">
+    <span class="prompt">~/github $</span>
+    <span class="typed-text" id="typed"></span>
+    <span class="cursor"></span>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-val">3+</span>
+      <div class="stat-label">AI Projects</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-val">90%</span>
+      <div class="stat-label">CNN Accuracy</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-val">RAG</span>
+      <div class="stat-label">Primary Stack</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-val">∞</span>
+      <div class="stat-label">Things to Build</div>
+    </div>
+  </div>
+
+  <div class="note">↑ GitHub profile header preview &nbsp;·&nbsp; <span>renders as animated SVG on GitHub</span></div>
+</div>
+
+<script>
+  const lines = [
+    "building AI systems that actually work...",
+    "OCR + LLM pipelines // handwriting → feedback",
+    "RAG · vector search · multimodal models",
+    "second year. way too many side projects.",
+  ];
+  let li=0, ci=0, deleting=false;
+  const el = document.getElementById('typed');
+  function type(){
+    const line = lines[li];
+    if(!deleting){
+      el.textContent = line.slice(0,++ci);
+      if(ci===line.length){ deleting=true; setTimeout(type,2200); return; }
+    } else {
+      el.textContent = line.slice(0,--ci);
+      if(ci===0){ deleting=false; li=(li+1)%lines.length; setTimeout(type,350); return; }
+    }
+    setTimeout(type, deleting ? 28 : 52);
+  }
+  setTimeout(type, 600);
+</script>
+</body>
+</html>
