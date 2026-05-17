@@ -1,0 +1,166 @@
+<svg width="100%" viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;display=swap');
+
+      .root { font-family: 'Fira Code', 'Courier New', monospace; }
+
+      /* flicker on ascii */
+      @keyframes flicker {
+        0%,93%,100% { opacity:1; }
+        94%          { opacity:.7; }
+        95%          { opacity:1; }
+        97%          { opacity:.85; }
+      }
+      .ascii { animation: flicker 6s ease-in-out infinite; }
+
+      /* staggered row fade-in */
+      @keyframes fadeRow {
+        from { opacity:0; transform:translateX(-10px); }
+        to   { opacity:1; transform:translateX(0);     }
+      }
+      .r1  { animation: fadeRow .4s .05s ease both; }
+      .r2  { animation: fadeRow .4s .18s ease both; }
+      .r3  { animation: fadeRow .4s .32s ease both; }
+      .r4  { animation: fadeRow .4s .46s ease both; }
+      .r5  { animation: fadeRow .4s .60s ease both; }
+      .r6  { animation: fadeRow .4s .74s ease both; }
+      .r6b { animation: fadeRow .4s .82s ease both; }
+      .r7  { animation: fadeRow .4s .90s ease both; }
+      .r8  { animation: fadeRow .4s 1.04s ease both; }
+
+      /* swatch pop */
+      @keyframes swatchPop {
+        from { opacity:0; transform:scale(0); }
+        to   { opacity:1; transform:scale(1); }
+      }
+      .sw1 { animation: swatchPop .2s 1.2s ease both; }
+      .sw2 { animation: swatchPop .2s 1.28s ease both; }
+      .sw3 { animation: swatchPop .2s 1.36s ease both; }
+      .sw4 { animation: swatchPop .2s 1.44s ease both; }
+      .sw5 { animation: swatchPop .2s 1.52s ease both; }
+      .sw6 { animation: swatchPop .2s 1.60s ease both; }
+      .sw7 { animation: swatchPop .2s 1.68s ease both; }
+      .sw8 { animation: swatchPop .2s 1.76s ease both; }
+
+      /* typing cursor blink */
+      @keyframes blink {
+        0%,100% { opacity:1; }
+        50%      { opacity:0; }
+      }
+      .cursor { animation: blink 1s step-end infinite; }
+
+      /* typing text — cycles through 4 phrases using clip-path */
+      @keyframes type1 {
+        0%       { width:0; }
+        12%      { width:26ch; }
+        24%      { width:26ch; }
+        28%      { width:0; }
+        100%     { width:0; }
+      }
+      @keyframes type2 {
+        0%,26%   { width:0; }
+        38%      { width:30ch; }
+        50%      { width:30ch; }
+        54%      { width:0; }
+        100%     { width:0; }
+      }
+      @keyframes type3 {
+        0%,52%   { width:0; }
+        64%      { width:28ch; }
+        76%      { width:28ch; }
+        80%      { width:0; }
+        100%     { width:0; }
+      }
+      @keyframes type4 {
+        0%,78%   { width:0; }
+        90%      { width:32ch; }
+        97%      { width:32ch; }
+        100%     { width:0; }
+      }
+
+      .t1,.t2,.t3,.t4 {
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+      }
+      .t1 { animation: type1 16s 1s ease-in-out infinite; }
+      .t2 { animation: type2 16s 1s ease-in-out infinite; }
+      .t3 { animation: type3 16s 1s ease-in-out infinite; }
+      .t4 { animation: type4 16s 1s ease-in-out infinite; }
+
+      /* stat card fade up */
+      @keyframes fadeUp {
+        from { opacity:0; transform:translateY(8px); }
+        to   { opacity:1; transform:translateY(0); }
+      }
+      .sc1 { animation: fadeUp .35s 1.4s ease both; }
+      .sc2 { animation: fadeUp .35s 1.55s ease both; }
+      .sc3 { animation: fadeUp .35s 1.70s ease both; }
+      .sc4 { animation: fadeUp .35s 1.85s ease both; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="860" height="280" fill="#0d1117"/>
+
+  <!-- ── LEFT PANEL (ascii) ── -->
+  <rect x="0" y="0" width="400" height="280" fill="#010409"/>
+  <rect x="400" y="0" width="1" height="280" fill="#21262d"/>
+
+  <g class="ascii root" transform="translate(14, 28)">
+    <text fill="#00d4aa" font-size="9.5" font-family="'Fira Code','Courier New',monospace" font-weight="400">
+      <tspan x="0" dy="0">  ██████╗ ███╗   ███╗███████╗██████╗ </tspan>
+      <tspan x="0" dy="11"> ██╔═══██╗████╗ ████║██╔════╝██╔══██╗</tspan>
+      <tspan x="0" dy="11"> ██║   ██║██╔████╔██║█████╗  ██████╔╝</tspan>
+      <tspan x="0" dy="11"> ██║   ██║██║╚██╔╝██║██╔══╝  ██╔══██╗</tspan>
+      <tspan x="0" dy="11"> ╚██████╔╝██║ ╚═╝ ██║███████╗██║  ██║</tspan>
+      <tspan x="0" dy="11">  ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝</tspan>
+      <tspan x="0" dy="16"> ███████╗ █████╗ ██████╗  ██████╗  ██████╗  ██████╗ </tspan>
+      <tspan x="0" dy="11"> ██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗██╔═══██╗</tspan>
+      <tspan x="0" dy="11"> █████╗  ███████║██████╔╝██║   ██║██║   ██║██║   ██║</tspan>
+      <tspan x="0" dy="11"> ██╔══╝  ██╔══██║██╔══██╗██║   ██║██║   ██║██║▄▄ ██║</tspan>
+      <tspan x="0" dy="11"> ██║     ██║  ██║██║  ██║╚██████╔╝╚██████╔╝╚██████╔╝</tspan>
+      <tspan x="0" dy="11"> ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝  ╚══▀▀═╝</tspan>
+    </text>
+  </g>
+
+  <!-- ── RIGHT PANEL (neofetch) ── -->
+  <rect x="401" y="0" width="459" height="280" fill="#010409"/>
+
+  <g class="root" transform="translate(420, 28)">
+    <!-- header line -->
+    <text fill="#00d4aa" font-size="13" font-weight="700">omer</text>
+    <text x="38" fill="#555d66" font-size="13">@</text>
+    <text x="48" fill="#79c0ff" font-size="13" font-weight="700">github</text>
+
+    <!-- divider -->
+    <text x="0" y="18" fill="#1e3a32" font-size="11">────────────────────────────</text>
+
+    <!-- rows -->
+    <g class="r1"><text x="0" y="34" fill="#00d4aa" font-size="11" font-weight="700">OS</text><text x="72" y="34" fill="#444d56" font-size="11">:</text><text x="82" y="34" fill="#79c0ff" font-size="11">Student OS · 2024–2028</text></g>
+    <g class="r2"><text x="0" y="50" fill="#00d4aa" font-size="11" font-weight="700">Host</text><text x="72" y="50" fill="#444d56" font-size="11">:</text><text x="82" y="50" fill="#c9d1d9" font-size="11">Avanthi Institute, Hyderabad</text></g>
+    <g class="r3"><text x="0" y="66" fill="#00d4aa" font-size="11" font-weight="700">Degree</text><text x="72" y="66" fill="#444d56" font-size="11">:</text><text x="82" y="66" fill="#d2a8ff" font-size="11">B.Tech CSE (AI &amp; ML)</text></g>
+    <g class="r4"><text x="0" y="82" fill="#00d4aa" font-size="11" font-weight="700">Focus</text><text x="72" y="82" fill="#444d56" font-size="11">:</text><text x="82" y="82" fill="#56d364" font-size="11">LLMs · RAG · Computer Vision</text></g>
+    <g class="r5"><text x="0" y="98" fill="#00d4aa" font-size="11" font-weight="700">Languages</text><text x="72" y="98" fill="#444d56" font-size="11">:</text><text x="82" y="98" fill="#e3b341" font-size="11">Python · Java · C</text></g>
+    <g class="r6"><text x="0" y="114" fill="#00d4aa" font-size="11" font-weight="700">Stack</text><text x="72" y="114" fill="#444d56" font-size="11">:</text><text x="82" y="114" fill="#ffa28b" font-size="11">TensorFlow · Flask · ChromaDB</text></g>
+    <g class="r6b"><text x="82" y="130" fill="#ffa28b" font-size="11">OpenRouter · Groq · AWS</text></g>
+    <g class="r7"><text x="0" y="146" fill="#00d4aa" font-size="11" font-weight="700">Building</text><text x="72" y="146" fill="#444d56" font-size="11">:</text><text x="82" y="146" fill="#c9d1d9" font-size="11">AI that solves real problems</text></g>
+    <g class="r8"><text x="0" y="162" fill="#00d4aa" font-size="11" font-weight="700">Contact</text><text x="72" y="162" fill="#444d56" font-size="11">:</text><text x="82" y="162" fill="#d2a8ff" font-size="11">omermohammedfarooq@gmail.com</text></g>
+
+    <!-- swatches -->
+    <rect class="sw1" x="0"   y="178" width="15" height="15" rx="2" fill="#010409" stroke="#30363d" stroke-width="1"/>
+    <rect class="sw2" x="19"  y="178" width="15" height="15" rx="2" fill="#21262d"/>
+    <rect class="sw3" x="38"  y="178" width="15" height="15" rx="2" fill="#444d56"/>
+    <rect class="sw4" x="57"  y="178" width="15" height="15" rx="2" fill="#8b949e"/>
+    <rect class="sw5" x="76"  y="178" width="15" height="15" rx="2" fill="#00d4aa"/>
+    <rect class="sw6" x="95"  y="178" width="15" height="15" rx="2" fill="#79c0ff"/>
+    <rect class="sw7" x="114" y="178" width="15" height="15" rx="2" fill="#d2a8ff"/>
+    <rect class="sw8" x="133" y="178" width="15" height="15" rx="2" fill="#e3b341"/>
+  </g>
+
+  <!-- ── TYPING BAR ── -->
+  <rect x="0" y="282" width="860" height="36" fill="#010409" rx="0"/>
+  <!-- this section is below the main card, shown in the README separately -->
+
+</svg>
