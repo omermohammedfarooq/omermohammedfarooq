@@ -1,30 +1,14 @@
 <!--
-  ╔═══════════════════════════════════════════════════════════════╗
-  ║           Mohammed Omer Farooq — GitHub Profile              ║
-  ╚═══════════════════════════════════════════════════════════════╝
+  Mohammed Omer Farooq — GitHub Profile README
 -->
 
 <div align="center">
+  <img src="header.svg" width="100%" alt="Mohammed Omer Farooq — GitHub Profile Header"/>
+</div>
 
-```
- ██████╗ ███╗   ███╗███████╗██████╗
-██╔═══██╗████╗ ████║██╔════╝██╔══██╗
-██║   ██║██╔████╔██║█████╗  ██████╔╝
-██║   ██║██║╚██╔╝██║██╔══╝  ██╔══██╗
-╚██████╔╝██║ ╚═╝ ██║███████╗██║  ██║
- ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
-```
+<div align="center">
 
-### `Mohammed Omer Farooq`
-
-**CSE (AI & ML) · Avanthi Institute · Hyderabad · 2024–2028**
-
-*I build AI systems that solve real problems —*
-*not for the hype, but because I want to understand how things actually work underneath.*
-
-<br/>
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&pause=1000&color=00D4AA&center=true&vCenter=true&width=500&lines=OCR+%2B+LLM+pipelines;RAG+systems+%26+vector+databases;Multimodal+AI+applications;Open-source+AI+explorer)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&pause=1200&color=00D4AA&center=true&vCenter=true&width=600&lines=building+AI+systems+that+actually+work...;OCR+%2B+LLM+pipelines+%2F%2F+handwriting+%E2%86%92+feedback;RAG+%C2%B7+vector+search+%C2%B7+multimodal+models;second+year.+way+too+many+side+projects.)](https://git.io/typing-svg)
 
 </div>
 
@@ -42,8 +26,8 @@ class OmerFarooq:
     location   = "Hyderabad, India 🇮🇳"
     education  = "B.Tech CSE (AI & ML) — Avanthi Institute, 2024–2028"
     focus      = ["LLMs", "RAG systems", "Computer Vision", "Multimodal AI"]
-    building   = "AI tools that actually work in the real world"
-    ask_me     = "Python · Gradio · LLM APIs · OpenCV · Flask"
+    building   = "AI that solves real problems — not for the hype"
+    stack      = ["Python", "TensorFlow", "Flask", "ChromaDB", "Groq", "AWS"]
     contact    = "omermohammedfarooq@gmail.com"
 ```
 
