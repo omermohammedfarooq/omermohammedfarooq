@@ -3,7 +3,7 @@
 -->
 
 <div align="center">
-  <img src="header.svg" width="100%" alt="Mohammed Omer Farooq — GitHub Profile Header"/>
+  <img src="header.html" width="100%" alt="Mohammed Omer Farooq — GitHub Profile Header"/>
 </div>
 
 <div align="center">
