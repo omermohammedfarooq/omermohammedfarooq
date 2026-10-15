@@ -12,12 +12,6 @@
 
 </div>
 
-<div align="center">
-
-[![Microsoft Certified](https://img.shields.io/badge/Microsoft%20Certified-Azure%20AI%20Apps%20%26%20Agents%20Developer%20Associate-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-us/credentials/)
-
-</div>
-
 ---
 
 <div align="center">
@@ -31,7 +25,6 @@ class OmerFarooq:
     name       = "Mohammed Omer Farooq"
     location   = "Hyderabad, India 🇮🇳"
     education  = "B.Tech CSE (AI & ML) — Avanthi Institute, 2024–2028"
-    certified  = "Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103)"
     focus      = ["LLMs", "RAG systems", "AI Agents", "Computer Vision", "Multimodal AI"]
     building   = "AI that solves real problems — not for the hype"
     stack      = ["Python", "TensorFlow", "Flask", "ChromaDB", "Groq", "Azure", "Microsoft Foundry", "AWS"]
@@ -136,7 +129,7 @@ class OmerFarooq:
 <div align="center">
 
 ```
-"The goal is not to automate — it's to understand."
+"Break it. Fix it. Understand it."
 ```
 
 ![Profile Views](https://komarev.com/ghpvc/?username=omermohammedfarooq&color=00d4aa&style=flat-square&label=profile+views)
