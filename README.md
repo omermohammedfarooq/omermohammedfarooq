@@ -110,17 +110,12 @@ class OmerFarooq:
 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=omermohammedfarooq&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00d4aa&text_color=c9d1d9&langs_count=8" width="48%" />
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=omermohammedfarooq&bg_color=0d1117&color=00d4aa&line=00d4aa&point=ffffff&hide_border=true" width="98%" />
+<br/><br/>
 
-</div>
-
----
-
-## 🏆 GitHub Trophies
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=omermohammedfarooq&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&row=1" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/omermohammedfarooq/omermohammedfarooq/output/github-snake-dark.svg" />
+  <img alt="Contribution snake" src="https://raw.githubusercontent.com/omermohammedfarooq/omermohammedfarooq/output/github-snake.svg" width="98%" />
+</picture>
 
 </div>
 
