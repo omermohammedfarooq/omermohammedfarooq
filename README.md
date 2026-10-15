@@ -8,7 +8,13 @@
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&pause=1200&color=00D4AA&center=true&vCenter=true&width=600&lines=building+AI+systems+that+actually+work...;OCR+%2B+LLM+pipelines+%2F%2F+handwriting+%E2%86%92+feedback;RAG+%C2%B7+vector+search+%C2%B7+multimodal+models;second+year.+way+too+many+side+projects.)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&pause=1200&color=00D4AA&center=true&vCenter=true&width=600&lines=building+AI+systems+that+actually+work...;OCR+%2B+LLM+pipelines+%2F%2F+handwriting+%E2%86%92+feedback;RAG+%C2%B7+vector+search+%C2%B7+multimodal+models;AI+agents+on+Azure+%C2%B7+Microsoft+Foundry;second+year.+way+too+many+side+projects.)](https://git.io/typing-svg)
+
+</div>
+
+<div align="center">
+
+[![Microsoft Certified](https://img.shields.io/badge/Microsoft%20Certified-Azure%20AI%20Apps%20%26%20Agents%20Developer%20Associate-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-us/credentials/)
 
 </div>
 
@@ -25,11 +31,24 @@ class OmerFarooq:
     name       = "Mohammed Omer Farooq"
     location   = "Hyderabad, India 🇮🇳"
     education  = "B.Tech CSE (AI & ML) — Avanthi Institute, 2024–2028"
-    focus      = ["LLMs", "RAG systems", "Computer Vision", "Multimodal AI"]
+    certified  = "Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103)"
+    focus      = ["LLMs", "RAG systems", "AI Agents", "Computer Vision", "Multimodal AI"]
     building   = "AI that solves real problems — not for the hype"
-    stack      = ["Python", "TensorFlow", "Flask", "ChromaDB", "Groq", "AWS"]
+    stack      = ["Python", "TensorFlow", "Flask", "ChromaDB", "Groq", "Azure", "Microsoft Foundry", "AWS"]
     contact    = "omermohammedfarooq@gmail.com"
 ```
+
+---
+
+## 🎓 Certifications
+
+<div align="center">
+
+| Certification | Issuer | Exam |
+|---|---|---|
+| 🤖 **Microsoft Certified: Azure AI Apps and Agents Developer Associate** | Microsoft | `AI-103` |
+
+</div>
 
 ---
 
@@ -45,13 +64,17 @@ class OmerFarooq:
 
 <img src="https://skillicons.dev/icons?i=tensorflow,opencv,pytorch&theme=dark" />
 
+**AI & Agents Platform**
+
+[![Microsoft Foundry](https://img.shields.io/badge/Microsoft%20Foundry-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://ai.azure.com)
+
 **Backend & Tools**
 
 <img src="https://skillicons.dev/icons?i=flask,fastapi,git,github,linux,vscode&theme=dark" />
 
 **Databases & Cloud**
 
-<img src="https://skillicons.dev/icons?i=aws,mysql,mongodb&theme=dark" />
+<img src="https://skillicons.dev/icons?i=azure,aws,mysql,mongodb&theme=dark" />
 
 **Currently Exploring**
 
